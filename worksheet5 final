@@ -1,0 +1,184 @@
+# Open the file in read mode
+with open('learning_python.txt', 'r') as file:
+    # Read and print the contents once by reading in the entire file
+    contents = file.read()
+    print("Printing contents by reading in the entire file:")
+    print(contents)
+
+    # Reset the file pointer to the beginning
+    file.seek(0)
+
+    # Print the contents once by storing the lines in a list and then looping over each line
+    print("\nPrinting contents by looping over each line:")
+    lines = file.readlines()
+    for line in lines:
+        print(line.strip())
+
+# Step 1: Creating the file
+file_content = """Learning Python is fun.
+Python is a powerful language.
+Many people use Python for data science.
+"""
+
+with open("learning_python.txt", "w") as file:
+    file.write(file_content)
+
+# Step 2: Reading, replacing, and printing each line
+with open("learning_python.txt", "r") as file:
+    for line in file:
+        modified_line = line.replace('Python', 'C')
+        print(modified_line, end='')
+
+
+def get_number(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("That's not a valid number. Please enter a numeric value.")
+
+def main():
+    print("Addition Program")
+    num1 = get_number("Enter the first number: ")
+    num2 = get_number("Enter the second number: ")
+    
+    result = num1 + num2
+    print(f"The result of adding {num1} and {num2} is {result}.")
+
+if __name__ == "__main__":
+    main()
+
+while True:
+    try:
+        # Prompt the user to enter the first number
+        num1 = float(input("Enter the first number: "))
+        
+        # Prompt the user to enter the second number
+        num2 = float(input("Enter the second number: "))
+        
+        # Perform the addition
+        result = num1 + num2
+        
+        # Print the result
+        print(f"The result of {num1} + {num2} is {result}\n")
+    
+    except ValueError:
+        # Handle the case where the user enters invalid input
+        print("Invalid input. Please enter numeric values.\n")
+    
+    # Ask the user if they want to perform another calculation
+    continue_prompt = input("Do you want to perform another addition? (yes/no): ").strip().lower()
+    if continue_prompt != 'yes':
+        print("Thank you for using the addition calculator. Goodbye!")
+        break
+
+
+
+def read_and_print_file(filename):
+    try:
+        with open(filename, 'r') as file:
+            contents = file.read()
+            print(f"Contents of {filename}:\n{contents}")
+    except FileNotFoundError:
+        print(f"Sorry, the file {filename} was not found.")
+
+# Reading cats.txt
+read_and_print_file('cats.txt')
+
+# Reading dogs.txt
+read_and_print_file('dogs.txt')
+
+
+
+mport json
+
+def store_favorite_number():
+    favorite_number = input("What's your favorite number? ")
+    with open('favorite_number.json', 'w') as file:
+        json.dump(favorite_number, file)
+    print("Your favorite number has been stored.")
+
+if __name__ == "__main__":
+    store_favorite_number()
+
+
+import json
+import os
+
+def get_user_info():
+    user_info = {}
+    
+    if os.path.exists("user_info.json"):
+        with open("user_info.json", "r") as file:
+            user_info = json.load(file)
+            print("Welcome back, {}!".format(user_info["username"]))
+    else:
+        user_info["username"] = input("What is your username? ")
+        user_info["favorite_number"] = input("What is your favorite number? ")
+        user_info["favorite_color"] = input("What is your favorite color? ")
+        
+        with open("user_info.json", "w") as file:
+            json.dump(user_info, file)
+            print("Your information has been saved.")
+
+    return user_info
+
+def print_user_summary(user_info):
+    print("\nUser Summary:")
+    print("Username:", user_info["username"])
+    print("Favorite Number:", user_info["favorite_number"])
+    print("Favorite Color:", user_info["favorite_color"])
+
+if __name__ == "__main__":
+    user_info = get_user_info()
+    print_user_summary(user_info)
+
+import json
+import os
+
+def get_user_info():
+    user_info = {}
+
+    if os.path.exists("user_info.json"):
+        with open("user_info.json", "r") as file:
+            user_info = json.load(file)
+            current_username = input("Are you {}? (yes/no): ".format(user_info["username"]))
+            if current_username.lower() == "no":
+                print("Welcome, new user!")
+                user_info["username"] = input("What is your username? ")
+                user_info["favorite_number"] = input("What is your favorite number? ")
+                user_info["favorite_color"] = input("What is your favorite color? ")
+
+                with open("user_info.json", "w") as file:
+                    json.dump(user_info, file)
+                    print("Your information has been saved.")
+            else:
+                print("Welcome back, {}!".format(user_info["username"]))
+    else:
+        user_info["username"] = input("What is your username? ")
+        user_info["favorite_number"] = input("What is your favorite number? ")
+        user_info["favorite_color"] = input("What is your favorite color? ")
+
+        with open("user_info.json", "w") as file:
+            json.dump(user_info, file)
+            print("Your information has been saved.")
+
+    return user_info
+
+def print_user_summary(user_info):
+    print("\nUser Summary:")
+    print("Username:", user_info["username"])
+    print("Favorite Number:", user_info["favorite_number"])
+    print("Favorite Color:", user_info["favorite_color"])
+
+if __name__ == "__main__":
+    user_info = get_user_info()
+    print_user_summary(user_info)
+
+
+
+
+
+
+
+

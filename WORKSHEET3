@@ -1,0 +1,259 @@
+# Define dictionaries for two people with Nepali names in English script
+person1 = {
+    "name": "Sita",
+    "age": 28,
+    "occupation": "Nurse"
+}
+
+person2 = {
+    "name": "Ram",
+    "age": 32,
+    "occupation": "Teacher"
+}
+
+# Store all dictionaries in a list called people
+people = [person1, person2]
+
+# Loop through the list of people
+for person in people:
+    print("Name:", person["name"])
+    print("Age:", person["age"])
+    print("Occupation:", person["occupation"])
+    print()  # Add a newline for separation
+
+# Create dictionaries for different pets
+pet1 = {
+    'animal': 'dog',
+    'name': 'Buddy',
+    'owner': 'Alice'
+}
+
+pet2 = {
+    'animal': 'cat',
+    'name': 'Whiskers',
+    'owner': 'Bob'
+}
+
+pet3 = {
+    'animal': 'parrot',
+    'name': 'Polly',
+    'owner': 'Cathy'
+}
+
+pet4 = {
+    'animal': 'hamster',
+    'name': 'Hammy',
+    'owner': 'David'
+}
+
+# Store these dictionaries in a list called pets
+pets = [pet1, pet2, pet3, pet4]
+
+# Loop through the list and print everything you know about each pet
+for pet in pets:
+    print(f"Animal: {pet['animal']}")
+    print(f"Name: {pet['name']}")
+    print(f"Owner: {pet['owner']}")
+    print()  # Add a blank line for better readability
+
+# Create a dictionary for favorite places
+favorite_places = {
+    'Ram': ['Kyoto', 'Lisbon', 'Dubai'],
+    'Shyam': ['Seoul', 'Los Angeles'],
+    'Hari': ['Venice', 'Cape Town', 'Reykjavik']
+}
+
+# Loop through the dictionary and print each person's favorite places
+for person, places in favorite_places.items():
+    print(f"{person}'s favorite places are:")
+    for place in places:
+        print(f" - {place}")
+    print()  # Add a blank line for better readability
+
+
+    # Create a dictionary for favorite numbers
+favorite_numbers = {
+    'Emma': [7, 14, 21],
+    'Liam': [3, 9, 27],
+    'Olivia': [5, 10, 15]
+}
+
+# Loop through the dictionary and print each person's favorite numbers
+for person, numbers in favorite_numbers.items():
+    print(f"{person}'s favorite numbers are:")
+    for number in numbers:
+        print(f" - {number}")
+    print()  # Add a blank line for better readability
+
+
+# Create a dictionary for cities
+cities = {
+    'Tokyo': {
+        'country': 'Japan',
+        'population': '37.4 million',
+        'fact': 'Tokyo is the most populous metropolitan area in the world.'
+    },
+    'New York': {
+        'country': 'United States',
+        'population': '8.4 million',
+        'fact': 'New York is known as "The Big Apple."'
+    },
+    'Paris': {
+        'country': 'France',
+        'population': '2.1 million',
+        'fact': 'Paris is known as the "City of Light."'
+    }
+}
+
+# Loop through the dictionary and print the information about each city
+for city, info in cities.items():
+    print(f"City: {city}")
+    print(f"  Country: {info['country']}")
+    print(f"  Population: {info['population']}")
+    print(f"  Fact: {info['fact']}")
+    print()  
+
+
+
+# Initialize an empty list to store pizza toppings
+pizza_toppings = []
+
+# Prompt the user to enter pizza toppings
+while True:
+    topping = input("Enter a pizza topping (or 'quit' to finish): ")
+    
+    if topping.lower() == 'quit':
+        break  # Exit the loop if 'quit' is entered
+    
+    # Add the topping to the list
+    pizza_toppings.append(topping)
+    
+    # Print a message confirming the addition of the topping
+    print(f"Adding {topping} to your pizza.")
+
+# Print the final list of pizza toppings
+print("Your pizza will have the following toppings:")
+for topping in pizza_toppings:
+    print("- " + topping)
+
+
+
+    # Loop to ask users their age and calculate ticket cost
+while True:
+    age_str = input("Please enter your age (or 'quit' to exit): ")
+    
+    # Check if the user wants to quit
+    if age_str.lower() == 'quit':
+        break
+    
+    # Convert the input to an integer
+    try:
+        age = int(age_str)
+    except ValueError:
+        print("Invalid input. Please enter a number.")
+        continue
+    
+    # Determine the ticket cost based on age
+    if age < 3:
+        ticket_price = 0
+    elif 3 <= age <= 12:
+        ticket_price = 10
+    else:
+        ticket_price = 15
+    
+    # Print the cost of the ticket
+    print(f"The cost of your movie ticket is ${ticket_price}.")
+
+
+# Version 1: Conditional test in the while statement
+
+print("Enter pizza toppings (type 'quit' to stop):")
+
+topping = ""
+while topping != 'quit':
+    topping = input("Enter a topping: ").lower()
+    if topping != 'quit':
+        print(f"I'll add {topping} to your pizza.")
+
+
+
+# Version 2: Use an active variable
+
+print("Enter pizza toppings (type 'quit' to stop):")
+
+active = True
+while active:
+    topping = input("Enter a topping: ").lower()
+    if topping == 'quit':
+        active = False
+    else:
+        print(f"I'll add {topping} to your pizza.")
+
+
+# Version 3: Use a break statement for 'quit' value
+
+print("Enter pizza toppings (type 'quit' to stop):")
+
+while True:
+    topping = input("Enter a topping: ").lower()
+    if topping == 'quit':
+        break
+    else:
+        print(f"I'll add {topping} to your pizza.")
+
+
+# Infinite loop example
+
+while True:
+    print("This loop will run forever. Press CTRL-C to stop.")
+
+
+Step 1: Create the lists
+sandwich_orders = ['tuna', 'ham', 'turkey', 'veggie', 'chicken']
+finished_sandwiches = []
+
+# Step 2: Loop through the list of sandwich orders
+while sandwich_orders:
+    current_sandwich = sandwich_orders.pop(0)
+    print(f"I made your {current_sandwich} sandwich.")
+    finished_sandwiches.append(current_sandwich)
+
+# Step 3: Print the list of finished sandwiches
+print("\nAll sandwiches have been made:")
+for sandwich in finished_sandwiches:
+    print(f"{sandwich.title()} sandwich")
+
+# Step 1: Create the lists and add 'pastrami'
+sandwich_orders = ['tuna', 'ham', 'pastrami', 'turkey', 'veggie', 'pastrami', 'chicken', 'pastrami']
+finished_sandwiches = []
+
+# Step 2: Print a message about running out of pastrami and remove all 'pastrami' sandwiches
+print("The deli has run out of pastrami.")
+
+while 'pastrami' in sandwich_orders:
+    sandwich_orders.remove('pastrami')
+
+# Step 3: Loop through the list of sandwich orders
+while sandwich_orders:
+    current_sandwich = sandwich_orders.pop(0)
+    print(f"I made your {current_sandwich} sandwich.")
+    finished_sandwiches.append(current_sandwich)
+
+# Step 4: Print the list of finished sandwiches
+print("\nAll sandwiches have been made:")
+for sandwich in finished_sandwiches:
+    print(f"{sandwich.title()} sandwich")
+
+
+while True:
+    name = input("What is your name? ")
+    destination = input("If you could visit one place in the world, where would you go? ")
+    dream_vacations[name] = destination
+
+    if input("Would you like to let another person respond? (yes/no) ").lower() == 'no':
+        break
+
+print("\n--- Dream Vacation Poll Results ---")
+for name, destination in dream_vacations.items():
+    print(f"{name} would like to visit {destination}.")
+
