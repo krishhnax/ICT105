@@ -1,0 +1,84 @@
+destination = ["Bali", "america", "maldives", "nepal", "china"]
+print("Original list:", destination)
+sorted_list = sorted(destination)
+print("Sorted list (alphabetical order):", sorted_list)
+print("Original list:", destination)
+sorted_list_reverse = sorted(destination, reverse=True)
+print("Sorted list (reverse alphabetical order):", sorted_list_reverse)
+print("Original list:", destination)
+reversed_list = list(reversed(destination))
+print("Reversed list:", reversed_list)
+destination.sort(reverse=True)
+print("Sorted list in reverse:", destination)
+
+
+guests = ['Krishna', 'Roshan', 'Brayan']
+print("-- Initial Invitations --")
+for guest in guests:
+    print(f"Dear {guest},\nYou are cordially invited to dinner at my place. Please let me know if you can make it!\n")
+guests[1] = 'Dinesh'
+print("\n-- Updated Invitations --")
+for guest in guests:
+    print(f"Dear {guest},\nYou are still invited to dinner at my place. Please let me know if you can make it!\n")
+print("\n-- Informing about the bigger table --")
+print("Great news! We found a bigger table!")
+guests.insert(0, 'shubham')
+guests.insert(len(guests)//2, 'syad')
+guests.append('Ram')
+print("\n-- Additional Invitations --")
+for guest in guests:
+    print(f"Dear {guest},\nYou are cordially invited to dinner at my place. Please let me know if you can make it!\n")
+print("\n-- Limited Space --")
+print("Unfortunately, we can only invite two people for dinner.")
+while len(guests) > 2:
+    removed_guest = guests.pop()
+    print(f"Sorry {removed_guest}, we won't be able to accommodate you this time.")
+print("\n-- Final Invitations --")
+for guest in guests:
+    print(f"Dear {guest},\nYou are still invited to dinner at my place. Please let me know if you can make it!\n")
+
+
+age = 30
+
+if age < 2:
+    print("This person is a baby.")
+elif age < 4:
+    print("This person is a toddler.")
+elif age < 13:
+    print("This person is a child.")
+elif age < 20:
+    print("This person is a teenager.")
+elif age < 65:
+    print("This person is an adult.")
+else:
+    print("This person is a senior.")
+
+
+usernames = ['admin', 'Krishna', 'Roshan', 'Brayan', 'Syad']
+if usernames:
+    for username in usernames:
+        if username == 'admin':
+            print("Hello Admin. Would you like to see a status report?")
+        else:
+            print(f"Hello, {username.title()}, thank you for logging in again.")
+else:
+    print("We need to add users!")
+usernames.clear()
+if usernames:
+    for username in usernames:
+        if username == 'admin':
+            print("Hello Admin. Would you like to see a status report?")
+        else:
+            print(f"Hello, {username.title()}, thank you for logging in again.")
+else:
+    print("We need to add users!")
+current_users = ['admin', 'Krisna', 'Roshan', 'Brayan', 'Syed']
+
+new_users = ['krishna', 'ram', 'shyam', 'hari', 'shubham']
+
+current_users_lower = [user.lower() for user in current_users]
+for new_user in new_users:
+    if new_user.lower() in current_users_lower:
+        print(f"Sorry, {new_user} is not available. Please enter a new username.")
+    else:print(f"{new_user} is available.")
+    

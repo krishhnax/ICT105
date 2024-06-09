@@ -1,0 +1,25 @@
+A = 15
+B = 12
+print(A+B)
+print(A-B)
+print(A*B)
+print(A/B)
+
+
+a = 15
+b = 12
+c = int(a / b)
+print("Value of c:", c)
+print("Type of c:", type(c))
+c = float(c)
+print("New value of c (float):", c)
+print("Type of c (float):", type(c))
+message = "The result of a divided by b is: "
+
+
+print(message + str(c))
+print("\nComparison Results:")
+print("a > b:", a > b)
+print("a == b:", a == b)
+
+
